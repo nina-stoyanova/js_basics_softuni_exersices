@@ -1,34 +1,30 @@
 
 
-function agencyIncome (input) {
-    let adultTicketPrice = Number(input[3]); //120lv
-    let kidTicketNetWorth = adultTicketPrice - (adultTicketPrice * 0.7); //36lv
+function agencyIncome (name, adultTicketsCount, kidsTicketsCount, adultsTicketPrice, tax) {
 
-    let tax = Number(input[4]); //40
+    let airName = name;
+    let kidsTicketsPrice = Number(adultsTicketPrice) - (adultsTicketPrice * 0.7); //36
 
-    let adultTicketPriceWithTax = adultTicketPrice + tax; //160lv
-    let kidTicketPriceWithTax = kidTicketNetWorth + tax;//76
+    let adultsTicketsPriceWithTax = Number(adultsTicketPrice) + Number(tax); //160
 
-    let ticketsForAdults = Number(input[1]); //15
-    let ticketsForKids = Number(input[2]);//5
+    let kidsTicketPriceWithTax = kidsTicketsPrice + Number(tax);//76
 
-    let sumOfAllKidTickets = ticketsForKids * kidTicketPriceWithTax;//2400
-    let sumOfAllAdultTickets = ticketsForAdults * adultTicketPriceWithTax;//380
+    let allKidsTicketsPrice = (Number(kidsTicketsCount * kidsTicketPriceWithTax)); //380
+    let allAdultsTicketsPrice = (Number(adultTicketsCount * adultsTicketsPriceWithTax));//2400
 
-    let summery = sumOfAllKidTickets + sumOfAllAdultTickets; //2780
+    let allTicketsPrice = allAdultsTicketsPrice + allKidsTicketsPrice; //2780
 
-    let final = summery * 0.2;// 556
-    let finalFinal = final.toFixed(2);
+    let profit = allTicketsPrice * 0.2; //556
 
-    let name = input[0]; 
+    let clearProfit = profit.toFixed(2); 
 
-    let newString = `The profit of your agency from ${name} tickets is ${finalFinal} lv.`;
-    console.log(`${newString}`);
+    
+    console.log(`The profit of your agency from ${airName} tickets is ${clearProfit} lv.`);
+
 
 
 }
 
 
-agencyIncome(["WizzAir", "15", "5", "120", "40"]);
+agencyIncome("WizzAir", "15", "5", "120", "40");
 
-//agencyIncome(["WizzAir", "60", "23", "158.96", "39.12"]);
