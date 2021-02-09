@@ -1,11 +1,11 @@
-
-
 function zooShop (input) {
-    let dog = Number(input[0]); // number of dogs
-    let other = Number(input[1]); //number of other
-    dog = dog * 2.5;
-    other = other * 4;
-    let result = dog + other;
+    let numberOfDogs = Number(input[0]);
+    let numberOfOtherAnimals = Number(input[1]);
+
+    numberOfDogs = numberOfDogs * 2.5;
+    numberOfOtherAnimals = numberOfOtherAnimals * 4;
+    let result = numberOfDogs + numberOfOtherAnimals;
+
     console.log(` ${result} lv.`);
 }
 
