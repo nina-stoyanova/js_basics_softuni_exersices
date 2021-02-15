@@ -1,7 +1,6 @@
 
 
 function agencyIncome (name, adultTicketsCount, kidsTicketsCount, adultsTicketPrice, tax) {
-
     let airName = name;
     let kidsTicketsPrice = Number(adultsTicketPrice) - (adultsTicketPrice * 0.7); //36
 
@@ -17,14 +16,9 @@ function agencyIncome (name, adultTicketsCount, kidsTicketsCount, adultsTicketPr
     let profit = allTicketsPrice * 0.2; //556
 
     let clearProfit = profit.toFixed(2); 
-
-    
+ 
     console.log(`The profit of your agency from ${airName} tickets is ${clearProfit} lv.`);
-
-
-
 }
-
 
 agencyIncome("WizzAir", "15", "5", "120", "40");
 
