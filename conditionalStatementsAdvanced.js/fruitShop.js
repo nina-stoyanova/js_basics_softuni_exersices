@@ -3,7 +3,8 @@ let fruit = input[0];
 let day = input[1];
 let quantity = Number(input[2]);
 
-let price;
+let price=0;
+let passedThrougError = false;
 
 switch (day) {
    
@@ -35,9 +36,10 @@ switch (day) {
                 price = 3.85;
                 break;
             default:
-                console.log("error");
+                passedThrougError = true;
                 break;
         }break;
+    
         
     case "Saturday":
     case "Sunday":
@@ -64,18 +66,27 @@ switch (day) {
                 price = 4.20;
                 break;
             default:
-                console.log("error");
+                passedThrougError = true;
                 break;
         }break;
-        
-        
+    default:
+        passedThrougError = true;
+        break;    
 }
-let finalPrice = price * quantity;
-        console.log(`${finalPrice.toFixed(2)}`);
 
+
+
+if (passedThrougError === true) {
+    console.log("error");
+} else {
+    let finalPrice = price * quantity;
+    console.log(`${finalPrice.toFixed(2)}`);
+    
+}
 
 
 }
-fruitShop(["apple","Tuesday","2"]);
+//fruitShop(["apple","Tuesday","2"]);
 fruitShop(["tomato","Monday","0.5"]);
+//fruitShop(["apple","Workday","2"]);
 
