@@ -50,24 +50,37 @@ function newHouse (input) {
         }
     }
 
-    let final = budjet - priceWithPercentages;//50.56
     
 
-    if (final > 0) {
-       // let minusFinal = Math.abs(final);
-        console.log(`Hey, you have a great garden with ${flowersCount} ${typeOfFlowers} and ${final.toFixed(2)} leva left.`);
+    if (budjet >= priceWithPercentages) {
+        let difference = budjet - priceWithPercentages;
+        console.log(`Hey, you have a great garden with ${flowersCount} ${typeOfFlowers} and ${difference.toFixed(2)} leva left.`)
     } else {
-        let minus = Math.abs(final);
-        console.log(`Not enough money, you need ${minus.toFixed(2)} leva more.`);
+        let diff = Math.abs(budjet - priceWithPercentages);
+        console.log(`Not enough money, you need ${diff.toFixed(2)} leva more.`);
     }
+
+
+
+
+    // let final = budjet - priceWithPercentages;//50.56
+    
+
+    // if (final > 0) {
+    //    // let minusFinal = Math.abs(final);
+    //     console.log(`Hey, you have a great garden with ${flowersCount} ${typeOfFlowers} and ${final.toFixed(2)} leva left.`);
+    // } else {
+    //     let minus = Math.abs(final);
+    //     console.log(`Not enough money, you need ${minus.toFixed(2)} leva more.`);
+    // }
 
 }
 //newHouse(["Roses","55","250"]);
 //newHouse(["Tulips","88","260"]);
 //newHouse(["Narcissus","119","360"]);
-//newHouse(["Dahlias","10", "200"]);
+newHouse(["Dahlias","112", "460"]);
 //newHouse(["Dahlias","98", "200"]);
 //newHouse(["Gladiolus", "64", "160"]);
-newHouse(["Milena", "0", "100"]);
+//newHouse(["Milena", "0", "100"]);
 
 
