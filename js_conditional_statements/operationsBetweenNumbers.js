@@ -8,6 +8,7 @@ function operationsBetweenNumbers(input) {
     switch (operator) {
         case "+":
             result = number1 + number2;
+            
             if (result % 2 === 0) {
                 evenOdd = "even";
             } else {
