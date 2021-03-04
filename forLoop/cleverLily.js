@@ -3,24 +3,42 @@ function cleverLily(input) {
     let washingMachine = Number(input[1]);//170lv
     let priceOneToy = Number(input[2]);//6lv for one toy
 
-
-    let toySum = 0; //sum from the sold toys through odd years - 54lv
+    let oddBirthDays = 0;
     for (let i = 1; i <= lilyAge; i = i + 2) {//odd years 1,3,5,7,9
-        toySum = priceOneToy * i;
+        oddBirthDays = oddBirthDays + 1;
     }
+    let toySum = oddBirthDays * priceOneToy;
 
-    let moneySum = 0; // sum from the money through even years - 50lv
+
+    let allGifts = [];
     let lastGift = 0;
-    for (let i = 2; i <= lilyAge; i = i + 2) {//even years 2,4,6,8,10
+    let stollenMoney = 0;
+    for (let i = 2; i <= lilyAge; i = i + 2) {//even years 2,4,6
        lastGift = lastGift + 10;
-         
-
+    stollenMoney = stollenMoney + 1;
+       allGifts.push(lastGift);  
     }
-    console.log(lastSum)
 
-    let allMoney = toySum + moneySum;
 
+
+    let sumGifts = 0;
+    for (let i = 0; i < allGifts.length; i = i+1) {//0,1,2
+        let element = allGifts[i];//10,20,30
+        sumGifts = sumGifts + element;
+    }
     
+    let final = sumGifts + toySum - stollenMoney;
+    
+    let diff = washingMachine - final;
+
+    if (diff > 0) {
+        console.log(`No! ${diff.toFixed(2)}`);
+    } else {
+        let minus = Math.abs(diff);
+        console.log(`Yes! ${minus.toFixed(2)}`);
+    }
+
+
     
 
 }
